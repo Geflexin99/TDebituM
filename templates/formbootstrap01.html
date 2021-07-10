@@ -1,0 +1,323 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout example v5.0 </title>
+
+    <link rel="canonical" href="ref">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+
+
+    <meta name="theme-color" content="#7952b3">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>    
+    <!-- Custom styles for this template -->
+    <link href="../static/css/mystyle.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+ <div class="container">
+  <main>
+    <select id="editable-select">
+      <option>Alfa Romeo</option>
+      <option>Audi</option>
+      <option>BMW</option>
+      <option>Citroen</option>
+    </select>
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="../static/images/TDlogo.png" alt="" width="350" height="125">
+        <h2>Technical Debt Interview</h2>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur neque quidem ab dolorem eligendi eius, accusantium minima, molestias debitis, doloribus dolor? Aperiam beatae odit nihil totam blanditiis similique accusamus aliquam?</p>
+    </div>
+
+    <!-- sidebar -->
+    <div class="row g-5"> <!-- 和其他行的间距gutter为5(max) -->
+        <div class="col-md-3 col-lg-3 order-md-first"><!-- 在md(平板)显示为3格,在lg(桌面)显示四格  -->
+        
+          <ul class="list-group mb-4"> <!-- margin在bottom大小为4 -->
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h5 class="my-0">Personal Information</h5> <!-- margin在bottom和top大小为0 -->
+                
+              </div>
+              
+            </li>
+            
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h5 class="my-0">TD Incident 1</h5>
+                  <small class="text-muted">
+                    <ol>
+                        <li>Cause 1</li>
+                        <li>Cause 2</li>
+                        <li>Cause 3</li>
+                        <li>Cause 4</li>
+                    </ol>
+                  </small>
+                </div>  
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h5 class="my-0">TD Incident 2</h5>
+                  <small class="text-muted">
+                   <ol>
+                    <li>Cause 1</li>
+                    <li>Cause 2</li>
+                    <li>Cause 3</li>
+                    <li>Cause 4</li>
+                   </ol>
+                  </small>
+                </div>  
+            </li>
+           
+          </ul>
+        </div>
+
+    <!-- main Form -->
+  
+      <div class="col-md-7 col-lg-8"> <!-- 在md(平板)显示为7格,在lg(桌面)显示8格  -->
+         
+      <form class="needs-validation" action="/" method="POST" novalidate>
+
+           <!-- Person -->
+        <div class="row g-3">
+            <hr class="my-2">
+            <h4 class="mb-0">Personal Information</h4>
+            <!-- Person Number -->
+            <div class="col-lg-4 ">
+                <label for="input_personNumber" class="form-label">Number</label>
+                <input type="number" class="form-control" id="input_personNumber" name="personNumber" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                     Valid first name is required.
+                </div>
+            </div>
+
+            <!-- Person Position -->
+            <div class="col-lg-9 ">
+                <label for="input_Position" class="form-label">What is your position in the company?</label>
+                <input type="text" class="form-control" id="input_Position" name="personPosition" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                     Valid Position is required.
+                </div>
+            </div>
+
+            <!-- Person Disciplines -->
+            <div class="col-lg-9 ">
+                <label for="select_personDiscipline" class="form-label">What is your discipline in the company?</label> <br>
+                <select class="form-select" id="select_personDiscipline" name="personDiscipline" required>
+                    <option value="MW"> Mechanic</option>
+                    <option value="SW"> Software</option>
+                    <option value="WW"> Electronics</option>
+                    <option value="SV"> Service</option>
+                    <option value="ME">Management</option>
+                    <option value="PC"> Purchasing</option>
+                    <option value="Others"> Others</option>
+                  </select>  
+                  
+            </div>
+            
+            <!-- Leading Position ? -->
+            <div class="col-lg-12">
+                <label for="leadingPosition" class="form-label"> Leading Position? &nbsp &nbsp</label> 
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingyes" value=true>
+                    <label class="form-check-label" for="inlineRadio1">yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingnoo" value=false>
+                    <label class="form-check-label" for="inlineRadio2">no</label>
+                </div> 
+                         
+            </div>
+            
+            <!-- experience -->
+            <label for="select_experience" class="form-label">How long work experience in the industry / in a similar position do you bring with you?</label> <br>
+            <div class="col-lg-4 my-0">
+                <select class="form-select" name="experience" id="select_experience" required>          
+                  <option value="2-9"> 2 - 9 years</option>
+                  <option value="9-19"> 9 - 19 years</option>
+                  <option value="19+"> more than 19 years</option>
+                </select>             
+            </div>
+
+            <!-- heard of TD -->
+            <div class="col-lg-10 mt-4">
+                <label for="heardOfTD" class="form-label"> Herad of TD ? &nbsp &nbsp &nbsp</label> 
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="heardOfTD" id="heardOfTDyes" value=true>
+                    <label class="form-check-label" for="heardOfTDyes">yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="heardOfTD" id="heardOfTDno" value=flase>
+                    <label class="form-check-label" for="heardOfTDno">no</label>
+                </div>
+            </div>
+
+            <!-- TD Incident -->
+            <hr class="my-2">
+            
+            <h5 class="mb-3">TD Incident</h5>
+           
+
+
+            <div class="col-12">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+              <div class="invalid-feedback">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Country</label>
+              <select class="form-select" id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">State</label>
+              <select class="form-select" id="state" required>
+                <option value="">Choose...</option>
+                <option>California</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                Zip code required.
+              </div>
+            </div>
+        </div>
+        <!-- Affected Disciplines -->
+        <div class="col-lg-10 ">
+            <label for="personDiscipline" class="form-label">What is your discipline in the company?</label> <br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="personDisciplineMW" value="Mechanic">
+                <label class="form-check-label" for="personDisciplineMW">Mechanic</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="personDisciplineSW" value="Software">
+                <label class="form-check-label" for="personDisciplineSW">Software</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="personDisciplineEE" value="Electronics">
+                <label class="form-check-label" for="personDisciplineEE">Electronics</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="personDisciplineME" value="Management" >
+                <label class="form-check-label" for="personDisciplineME">Management</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="personDisciplineSV" value="Service" >
+                <label class="form-check-label" for="personDisciplineSV">Service</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="personDisciplinePC" value="Purchasing" >
+                <label class="form-check-label" for="personDisciplinePC">Purchasing</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="personDisciplineOT" value="Others" >
+                <input type="text" class="form-control" id="otherDiscipline" placeholder="Others" value="" >
+                
+              </div>
+            </div>
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">submit</button>
+          
+            <!-- Button trigger modal -->
+<button type="button" class="w-100 btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Interview abgeben
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary " type="submit">submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </form>
+    
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Automatisirungstechnik</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+    
+    <script src="../static/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../static/js/form-validation.js"></script>
+    
+  </body>
+</html>
