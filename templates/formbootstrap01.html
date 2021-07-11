@@ -4,15 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Checkout example v5.0 </title>
-
+    <title>TDebituM</title>
     <link rel="canonical" href="ref">
     <!-- Bootstrap core CSS -->
     <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    
-
-
     <meta name="theme-color" content="#7952b3">
 
     <style>
@@ -37,12 +32,7 @@
     
  <div class="container">
   <main>
-    <select id="editable-select">
-      <option>Alfa Romeo</option>
-      <option>Audi</option>
-      <option>BMW</option>
-      <option>Citroen</option>
-    </select>
+   
     <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="../static/images/TDlogo.png" alt="" width="350" height="125">
         <h2>Technical Debt Interview</h2>
@@ -98,7 +88,9 @@
       <div class="col-md-7 col-lg-8"> <!-- 在md(平板)显示为7格,在lg(桌面)显示8格  -->
          
       <form class="needs-validation" action="/" method="POST" novalidate>
-
+        
+          
+        
            <!-- Person -->
         <div class="row g-3">
             <hr class="my-2">
@@ -123,18 +115,15 @@
 
             <!-- Person Disciplines -->
             <div class="col-lg-9 ">
-                <label for="select_personDiscipline" class="form-label">What is your discipline in the company?</label> <br>
-                <select class="form-select" id="select_personDiscipline" name="personDiscipline" required>
-                    <option value="MW"> Mechanic</option>
-                    <option value="SW"> Software</option>
-                    <option value="WW"> Electronics</option>
-                    <option value="SV"> Service</option>
-                    <option value="ME">Management</option>
-                    <option value="PC"> Purchasing</option>
-                    <option value="Others"> Others</option>
-                  </select>  
-                  
-            </div>
+              <div>
+                <label for="select_personDiscipline" class="form-label">What is your discipline in the company?</label>
+                <input class="form-control" name= "datalist" list="datalistOptions" id="select_personDiscipline" placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                  {% for p in data %}
+                  <option value={{p}}> 
+                  {% endfor %}
+                </datalist></div> 
+              </div>
             
             <!-- Leading Position ? -->
             <div class="col-lg-12">
@@ -279,28 +268,28 @@
           <button class="w-100 btn btn-primary btn-lg" type="submit">submit</button>
           
             <!-- Button trigger modal -->
-<button type="button" class="w-100 btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
+          <button type="button" class="w-100 btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Launch demo modal
+            </button>
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Interview abgeben
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button class="btn btn-primary " type="submit">submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Interview abgeben
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button class="btn btn-primary " type="submit">submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
     
     </div>
@@ -315,7 +304,7 @@
     </ul>
   </footer>
 </div>
-    
+    <!-- js 文件 -->
     <script src="../static/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="../static/js/form-validation.js"></script>
     

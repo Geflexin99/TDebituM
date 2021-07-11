@@ -14,12 +14,17 @@ app.config.from_object(settings)
 @app.route('/',methods=['GET','POST'])
 def template():
     if request.method =='POST':
+        discipline=[
+            'Mechanic',
+            'Electronics',
+            'Software'
+        ]
         personNumber= request.form.get('personNumber')
         personPosition=request.form.get('personPosition')
         person ={'personNumber':personNumber,'personPosition':personPosition}
         persons.append(person)
         print(persons)
-        return render_template('formbootstrap01.html')
+        return render_template('formbootstrap01.html',data=discipline)
     return render_template('formbootstrap01.html')
 
 
