@@ -6,6 +6,76 @@ USERNAME = 'neo4j'
 PASSWORD = '112211'
 
 graph = Graph(scheme=SCHEME, host=HOST, auth=(USERNAME, PASSWORD))
+def getallMeasureSoll():
+    query = "MATCH (n:MeasureSoll) RETURN n.name AS MeasureSoll"
+
+    data_MeasureSoll = graph.run(query).data()
+
+    MeasureSolls = [MS["MeasureSoll"] for MS in data_MeasureSoll]
+
+    return MeasureSolls
+print(getallMeasureSoll())
+
+def getallMeasureIst():
+    query = "MATCH (n:MeasureIst) RETURN n.name AS MeasureIst"
+
+    data_MeasureIst = graph.run(query).data()
+
+    MeasureIsts = [MI["MeasureIst"] for MI in data_MeasureIst]
+
+    return MeasureIsts
+
+def getallCurrentstate():
+    query = "MATCH (n:CurrentState) RETURN n.name AS CurrentState"
+
+    data_CurrentState = graph.run(query).data()
+
+    CurrentStates = [currentState["CurrentState"] for currentState in data_CurrentState]
+
+    return CurrentStates
+
+def getallCause():
+    query = "MATCH (n:Cause) RETURN n.name AS Cause"
+
+    data_Cause = graph.run(query).data()
+
+    Causes = [cause["Cause"] for cause in data_Cause]
+
+    return Causes
+
+def getallTDIncident():
+    query = "MATCH (n:TDIncident) RETURN n.name AS TDIncident"
+
+    data_incident = graph.run(query).data() #REVIEW: chech other way of extracting directly dict() values
+    TDIncidents = [incident["TDIncident"] for incident in data_incident]
+
+    return TDIncidents
+
+def getallTDType():
+    query = "MATCH (n:TDType) RETURN n.name AS TDType"
+
+    types = graph.run(query).data() #REVIEW: chech other way of extracting directly dict() values
+    TDTypes = [type["TDType"] for type in types]
+
+    return TDTypes
+
+def getallTDSubtype():
+    query = "MATCH (n:TDSubtype) RETURN n.name AS TDSubtyp"
+
+    data_tdSubtyp = graph.run(query).data()
+
+    TDSubtypes = [party["TDSubtyp"] for party in data_tdSubtyp]
+
+    return TDSubtypes
+
+def getallParty():
+    query = "MATCH (n:Party) RETURN n.name AS Party"
+
+    data_parties = graph.run(query).data()
+
+    Parties = [party["Party"] for party in data_parties]
+
+    return Parties
 
 
 def causes_initiated_by_party(party):
@@ -74,27 +144,12 @@ def causes_initiated_by_party(party):
     return parties, causes, info, index_input, index_output
     # return dict_parties_causes
 
-def get_td_types():
-    query = "MATCH (n:TDType) RETURN n.name AS TDType"
 
-    types = graph.run(query).data() #REVIEW: chech other way of extracting directly dict() values
-    td_types = [type["TDType"] for type in types]
-
-    return td_types
-
-def get_parties():
-    query = "MATCH (n:Party) RETURN n.name AS Party"
-
-    data_parties = graph.run(query).data()
-
-    parties = [party["Party"] for party in data_parties]
-
-    return parties
 
 
 def affected_party_from_td(parties, relationship):
 
-    td_types = get_td_types()
+    td_types = getallTDType()
 
     td_groups = []
     for party in parties:
