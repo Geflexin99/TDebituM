@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask import render_template
 from werkzeug.utils import redirect
-import settings,json, utils 
+import settings,json, utils,queries 
 
 
 
@@ -14,13 +14,9 @@ app.config.from_object(settings)
 @app.route('/',methods=['GET','POST'])
 def template():
    
-    discipline=[
-        'Mechanic',
-        'Electronics',
-        'Software'
-        ]
-    
-    return render_template('formbootstrap01.html',data=discipline)
+    tdtyp=queries.getallTDType()
+    Party=queries.getallParty()
+    return render_template('formbootstrap01.html',party=Party)
 
 
 

@@ -39,59 +39,11 @@
         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur neque quidem ab dolorem eligendi eius, accusantium minima, molestias debitis, doloribus dolor? Aperiam beatae odit nihil totam blanditiis similique accusamus aliquam?</p>
     </div>
 
-    <!-- sidebar -->
-    <div class="row g-5"> <!-- 和其他行的间距gutter为5(max) -->
-        <div class="col-md-3 col-lg-3 order-md-first"><!-- 在md(平板)显示为3格,在lg(桌面)显示四格  -->
-        
-          <ul class="list-group mb-4"> <!-- margin在bottom大小为4 -->
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h5 class="my-0">Personal Information</h5> <!-- margin在bottom和top大小为0 -->
-                
-              </div>
-              
-            </li>
-            
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                  <h5 class="my-0">TD Incident 1</h5>
-                  <small class="text-muted">
-                    <ol>
-                        <li>Cause 1</li>
-                        <li>Cause 2</li>
-                        <li>Cause 3</li>
-                        <li>Cause 4</li>
-                    </ol>
-                  </small>
-                </div>  
-            </li>
-
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                  <h5 class="my-0">TD Incident 2</h5>
-                  <small class="text-muted">
-                   <ol>
-                    <li>Cause 1</li>
-                    <li>Cause 2</li>
-                    <li>Cause 3</li>
-                    <li>Cause 4</li>
-                   </ol>
-                  </small>
-                </div>  
-            </li>
-           
-          </ul>
-        </div>
-
     <!-- main Form -->
-  
-      <div class="col-md-7 col-lg-8"> <!-- 在md(平板)显示为7格,在lg(桌面)显示8格  -->
+      <div class="col-md-12 col-lg-12"> <!-- 在md(平板)显示为7格,在lg(桌面)显示8格  -->
          
       <form class="needs-validation" action="/" method="POST" novalidate>
-        
-          
-        
-           <!-- Person -->
+       <!-- Person -->
         <div class="row g-3">
             <hr class="my-2">
             <h4 class="mb-0">Personal Information</h4>
@@ -119,7 +71,7 @@
                 <label for="select_personDiscipline" class="form-label">What is your discipline in the company?</label>
                 <input class="form-control" name= "datalist" list="datalistOptions" id="select_personDiscipline" placeholder="Type to search...">
                 <datalist id="datalistOptions">
-                  {% for p in data %}
+                  {% for p in party %}
                   <option value={{p}}> 
                   {% endfor %}
                 </datalist></div> 
