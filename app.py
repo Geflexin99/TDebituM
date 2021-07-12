@@ -11,13 +11,17 @@ app.config.from_object(settings)
 
 
 @app.route('/',methods=['GET','POST'])
-def template():
-   
+def person():
+    subtdtyp=queries.getallTDSubtype()
     tdtyp=queries.getallTDType()
     Party=queries.getallParty()
     cause=queries.getallCause()
-    return render_template('formbootstrap01.html',party=Party,causes=cause, types=tdtyp)
+    return render_template('person.html',party=Party,causes=cause, types=tdtyp,subtypes=subtdtyp)
 
+@app.route('/incident',methods=['GET','POST'])
+def incident():
+    
+    return render_template('incident.html')
 
 
 

@@ -40,7 +40,7 @@
     </div>
 
     <!-- main Form -->
-      <div class="col-md-12 col-lg-12"> <!-- 在md(平板)显示为7格,在lg(桌面)显示8格  -->
+    <div class="col-md-12 col-lg-12"> <!-- 在md(平板)显示为7格,在lg(桌面)显示8格  -->
          
       <form class="needs-validation" action="/" method="POST" novalidate>
        <!-- Person -->
@@ -128,11 +128,9 @@
         </div>
 
         <!-- TD Cause -->
-        <hr class="my-2">
-        <div class="container ", id="cuase_container">
-        
-          <h4 class="mb-0">TD Cause</h4>
-          <div class="col-lg-9 ">
+        <hr class="my-2">     
+        <h4 class="mb-3">TD Cause</h4>        
+        <div class="col-lg-9 ">
           <div>
             <label for="input_cause" class="form-label">What is the causes of the TD incident?</label>
             <input class="form-control" list="Causes" id="input_cause" placeholder="", name="Cause_Name">
@@ -143,9 +141,21 @@
             </datalist>
           </div> 
         </div>
+        <!-- TD Subtype -->
+        <div class="col-lg-9 my-2">
+        <div>
+            <label for="input_TDSubtype" class="form-label">Which TD Subtype does this cuase belong to?</label>
+            <input class="form-control" list="SUBTYPE" id="input_TDSubtype" placeholder="",name="TDSubtyp">
+            <datalist id="SUBTYPE">
+              {% for p in subtypes %}
+              <option >{{p}}</option> 
+              {% endfor %}
+            </datalist>
+        </div> 
+        </div>
         <!-- TD Type -->
-        <div class="col-lg-9 ">
-          <div>
+        <div class="col-lg-9 my-2">
+        <div>
             <label for="input_TDType" class="form-label">Which TD type does this cuase belong to?</label>
             <input class="form-control" list="TYPE" id="input_TDType" placeholder="",name="TDtyp">
             <datalist id="TYPE">
@@ -153,72 +163,78 @@
               <option >{{p}}</option> 
               {% endfor %}
             </datalist>
-          </div> 
-        </div>    
+        </div> 
+        </div> 
+        <!-- initiating Disciplines -->
+        <div class="col-lg-10 my-4">
+          <label class="form-label">Which disciplines have initiated this cause?</label> <br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="initPartyMW" name="initiatingParty" value="Mechanic">
+              <label class="form-check-label" for="initPartyMW">Mechanic</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="initPartySW" name="initiatingParty" value="Software">
+              <label class="form-check-label" for="initPartySW">Software</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="initPartyEE" name="initiatingParty" value="Electronics">
+              <label class="form-check-label" for="initPartyEE">Electronics</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="initPartyME" name="initiatingParty" value="Management" >
+              <label class="form-check-label" for="initPartyME">Management</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="initPartySV" name="initiatingParty" value="Service" >
+              <label class="form-check-label" for="initPartySV">Service</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="initPartyPC" name="initiatingParty" value="Purchasing" >
+              <label class="form-check-label" for="pinitPartyPC">Purchasing</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input " type="checkbox" id="initPartyOT" name="initiatingParty" value="Others" >
+              <input type="text" class="form-control form-control-sm" id="otherDiscipline" placeholder="Others" value="" >   
+            </div>
+      </div>   
         <!-- Affected Disciplines -->
-        <div class="col-lg-10 ">
-            <label for="personDiscipline" class="form-label">which disciplines are affected by this cause affect?</label> <br>
+        <div class="col-lg-10 my-4">
+            <label class="form-label">Which disciplines are affected by this cause affect?</label> <br>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="personDisciplineMW" value="Mechanic">
-                <label class="form-check-label" for="personDisciplineMW">Mechanic</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="personDisciplineSW" value="Software">
-                <label class="form-check-label" for="personDisciplineSW">Software</label>
+                <input class="form-check-input" type="checkbox" name="affectedParty" id="affectecPartyMW" value="Mechanic">
+                <label class="form-check-label" for="affectecPartyMW">Mechanic</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="personDisciplineEE" value="Electronics">
-                <label class="form-check-label" for="personDisciplineEE">Electronics</label>
+                <input class="form-check-input" type="checkbox" id="affectecPartySW" name="affectedParty" value="Software">
+                <label class="form-check-label" for="affectecPartySW">Software</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="personDisciplineME" value="Management" >
-                <label class="form-check-label" for="personDisciplineME">Management</label>
+                <input class="form-check-input" type="checkbox" id="affectecPartyEE" name="affectedParty" value="Electronics">
+                <label class="form-check-label" for="affectecPartyEE">Electronics</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="personDisciplineSV" value="Service" >
-                <label class="form-check-label" for="personDisciplineSV">Service</label>
+                <input class="form-check-input" type="checkbox" id="affectecPartyME" name="affectedParty" value="Management" >
+                <label class="form-check-label" for="affectecPartyME">Management</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="personDisciplinePC" value="Purchasing" >
-                <label class="form-check-label" for="personDisciplinePC">Purchasing</label>
+                <input class="form-check-input" type="checkbox" id="affectecPartySV" name="affectedParty" value="Service" >
+                <label class="form-check-label" for="affectecPartySV">Service</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="personDisciplineOT" value="Others" >
-                <input type="text" class="form-control" id="otherDiscipline" placeholder="Others" value="" >
-                
+                <input class="form-check-input" type="checkbox" id="affectecPartyPC" name="affectedParty" value="Purchasing" >
+                <label class="form-check-label" for="affectecPartyPC">Purchasing</label>
               </div>
-            </div>
-        
-          </div>
-
-          <button class="w-100 btn btn-primary btn-lg" type="submit">submit</button>
-          
-            <!-- Button trigger modal -->
-          <button type="button" class="w-100 btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Launch demo modal
-            </button>
-  
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  Interview abgeben
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button class="btn btn-primary " type="submit">submit</button>
-                </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="other" name="affectedParty" value="other" >
+                <input type="text" class="form-control form-control-sm" id="otherValue" name="other" >   
               </div>
-            </div>
-          </div>
+        </div>
+        <!-- Submit Button -->
+        <button class="w-100 btn btn-primary btn-lg" type="submit">submit</button>
+                    
         </form>
     
-    </div>
+  </div>
   </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -233,6 +249,7 @@
     <!-- js 文件 -->
     <script src="../static/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="../static/js/form-validation.js"></script>
-    
+    <script>src="../static/js/checkbox.js"</script>
+    <script>alert()</script>
   </body>
 </html>

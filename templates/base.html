@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TDebituM</title>
+    <link rel="canonical" href="ref">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="theme-color" content="#7952b3">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>    
+    <!-- Custom styles for this template -->
+    <link href="../static/css/mystyle.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+ <div class="container" id="main_container">
+  <main>
+   
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="../static/images/TDlogo.png" alt="" width="350" height="125">
+        <h2>Technical Debt Interview</h2>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur neque quidem ab dolorem eligendi eius, accusantium minima, molestias debitis, doloribus dolor? Aperiam beatae odit nihil totam blanditiis similique accusamus aliquam?</p>
+    </div>
+
+    <!-- main Form -->
+    <div class="col-md-12 col-lg-12"> <!-- 在md(平板)显示为7格,在lg(桌面)显示8格  -->
+{% block form %}         
+      <form class="needs-validation" action="/" method="POST" novalidate>
+       
+     
+      </form>
+  {% endblock %}    
+  </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Automatisirungstechnik</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+    <!-- js 文件 -->
+    <script src="../static/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../static/js/form-validation.js"></script>
+    <script>alert()</script>
+  </body>
+</html>

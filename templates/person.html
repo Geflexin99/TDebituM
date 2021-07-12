@@ -1,0 +1,76 @@
+{%extends 'base.html'%}
+{% block form %}
+<form class="needs-validation" action="/incident" methods='POST' novalidate>
+    <!-- Person -->
+    <div class="row g-3">
+    <hr class="my-2">
+    <h4 class="mb-0">Personal Information</h4>
+    <!-- Person Number -->
+    <div class="col-lg-4 ">
+        <label for="input_personNumber" class="form-label">Number</label>
+        <input type="number" class="form-control" id="input_personNumber" name="personNumber" placeholder="" value="" required>
+        <div class="invalid-feedback">
+              Valid first number is required.
+        </div>
+    </div>
+
+    <!-- Person Position -->
+    <div class="col-lg-9 ">
+        <label for="input_Position" class="form-label">What is your position in the company?</label>
+        <input type="text" class="form-control" id="input_Position" name="personPosition" placeholder="" value="" required>
+        <div class="invalid-feedback">
+              Valid Position is required.
+        </div>
+    </div>
+
+    <!-- Person Disciplines -->
+    <div class="col-lg-9 ">
+      <div>
+        <label for="select_personDiscipline" class="form-label">What is your discipline in the company?</label>
+        <input class="form-control" name= "datalist" list="datalistOptions" id="select_personDiscipline" placeholder="Type to search...">
+        <datalist id="datalistOptions">
+          {% for p in party %}
+          <option> {{p}} </option>
+          {% endfor %}
+        </datalist></div> 
+    </div>
+    
+    <!-- Leading Position ? -->
+    <div class="col-lg-12">
+        <label for="leadingPosition" class="form-label"> Leading Position? &nbsp &nbsp</label> 
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingyes" value=true>
+            <label class="form-check-label" for="inlineRadio1">yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingnoo" value=false>
+            <label class="form-check-label" for="inlineRadio2">no</label>
+        </div> 
+                  
+    </div>
+    
+    <!-- experience -->
+    <label for="select_experience" class="form-label">How long work experience in the industry / in a similar position do you bring with you?</label> <br>
+    <div class="col-lg-4 my-0">
+        <select class="form-select" name="experience" id="select_experience" required>          
+          <option value="2-9"> 2 - 9 years</option>
+          <option value="9-19"> 9 - 19 years</option>
+          <option value="19+"> more than 19 years</option>
+        </select>             
+    </div>
+
+    <!-- heard of TD -->
+    <div class="col-lg-10 mt-4">
+        <label for="heardOfTD" class="form-label"> Herad of TD ? &nbsp &nbsp &nbsp</label> 
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="heardOfTD" id="heardOfTDyes" value=true>
+            <label class="form-check-label" for="heardOfTDyes">yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="heardOfTD" id="heardOfTDno" value=flase>
+            <label class="form-check-label" for="heardOfTDno">no</label>
+        </div>
+    </div>
+    <button class="w-100 btn btn-primary btn-lg" type="submit">submit</button>
+</form>
+{% endblock %}
