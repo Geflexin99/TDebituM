@@ -14,7 +14,7 @@ def getallMeasureSoll():
     MeasureSolls = [MS["MeasureSoll"] for MS in data_MeasureSoll]
 
     return MeasureSolls
-print(getallMeasureSoll())
+
 
 def getallMeasureIst():
     query = "MATCH (n:MeasureIst) RETURN n.name AS MeasureIst"
@@ -54,10 +54,11 @@ def getallTDIncident():
 def getallTDType():
     query = "MATCH (n:TDType) RETURN n.name AS TDType"
 
-    types = graph.run(query).data() #REVIEW: chech other way of extracting directly dict() values
-    TDTypes = [type["TDType"] for type in types]
+    data_types = graph.run(query).data() #REVIEW: chech other way of extracting directly dict() values
+    TDTypes = [type["TDType"] for type in data_types]
 
     return TDTypes
+print(getallTDType())
 
 def getallTDSubtype():
     query = "MATCH (n:TDSubtype) RETURN n.name AS TDSubtyp"

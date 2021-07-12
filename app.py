@@ -1,7 +1,6 @@
 from flask import Flask, request
 from flask import render_template
-from werkzeug.utils import redirect
-import settings,json, utils,queries 
+import settings,queries 
 
 
 
@@ -16,7 +15,8 @@ def template():
    
     tdtyp=queries.getallTDType()
     Party=queries.getallParty()
-    return render_template('formbootstrap01.html',party=Party)
+    cause=queries.getallCause()
+    return render_template('formbootstrap01.html',party=Party,causes=cause, types=tdtyp)
 
 
 

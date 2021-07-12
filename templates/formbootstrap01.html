@@ -30,7 +30,7 @@
   </head>
   <body class="bg-light">
     
- <div class="container">
+ <div class="container" id="main_container">
   <main>
    
     <div class="py-5 text-center">
@@ -45,147 +45,119 @@
       <form class="needs-validation" action="/" method="POST" novalidate>
        <!-- Person -->
         <div class="row g-3">
-            <hr class="my-2">
-            <h4 class="mb-0">Personal Information</h4>
-            <!-- Person Number -->
-            <div class="col-lg-4 ">
-                <label for="input_personNumber" class="form-label">Number</label>
-                <input type="number" class="form-control" id="input_personNumber" name="personNumber" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                     Valid first name is required.
-                </div>
-            </div>
-
-            <!-- Person Position -->
-            <div class="col-lg-9 ">
-                <label for="input_Position" class="form-label">What is your position in the company?</label>
-                <input type="text" class="form-control" id="input_Position" name="personPosition" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                     Valid Position is required.
-                </div>
-            </div>
-
-            <!-- Person Disciplines -->
-            <div class="col-lg-9 ">
-              <div>
-                <label for="select_personDiscipline" class="form-label">What is your discipline in the company?</label>
-                <input class="form-control" name= "datalist" list="datalistOptions" id="select_personDiscipline" placeholder="Type to search...">
-                <datalist id="datalistOptions">
-                  {% for p in party %}
-                  <option value={{p}}> 
-                  {% endfor %}
-                </datalist></div> 
-              </div>
-            
-            <!-- Leading Position ? -->
-            <div class="col-lg-12">
-                <label for="leadingPosition" class="form-label"> Leading Position? &nbsp &nbsp</label> 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingyes" value=true>
-                    <label class="form-check-label" for="inlineRadio1">yes</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingnoo" value=false>
-                    <label class="form-check-label" for="inlineRadio2">no</label>
-                </div> 
-                         
-            </div>
-            
-            <!-- experience -->
-            <label for="select_experience" class="form-label">How long work experience in the industry / in a similar position do you bring with you?</label> <br>
-            <div class="col-lg-4 my-0">
-                <select class="form-select" name="experience" id="select_experience" required>          
-                  <option value="2-9"> 2 - 9 years</option>
-                  <option value="9-19"> 9 - 19 years</option>
-                  <option value="19+"> more than 19 years</option>
-                </select>             
-            </div>
-
-            <!-- heard of TD -->
-            <div class="col-lg-10 mt-4">
-                <label for="heardOfTD" class="form-label"> Herad of TD ? &nbsp &nbsp &nbsp</label> 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="heardOfTD" id="heardOfTDyes" value=true>
-                    <label class="form-check-label" for="heardOfTDyes">yes</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="heardOfTD" id="heardOfTDno" value=flase>
-                    <label class="form-check-label" for="heardOfTDno">no</label>
-                </div>
-            </div>
-
-            <!-- TD Incident -->
-            <hr class="my-2">
-            
-            <h5 class="mb-3">TD Incident</h5>
-           
-
-
-            <div class="col-12">
-              <label for="username" class="form-label">Username</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
-              <div class="invalid-feedback">
-                  Your username is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="address" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-            </div>
-
-            <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country" required>
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select class="form-select" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
+        <hr class="my-2">
+        <h4 class="mb-0">Personal Information</h4>
+        <!-- Person Number -->
+        <div class="col-lg-4 ">
+            <label for="input_personNumber" class="form-label">Number</label>
+            <input type="number" class="form-control" id="input_personNumber" name="personNumber" placeholder="" value="" required>
+            <div class="invalid-feedback">
+                  Valid first number is required.
             </div>
         </div>
+
+        <!-- Person Position -->
+        <div class="col-lg-9 ">
+            <label for="input_Position" class="form-label">What is your position in the company?</label>
+            <input type="text" class="form-control" id="input_Position" name="personPosition" placeholder="" value="" required>
+            <div class="invalid-feedback">
+                  Valid Position is required.
+            </div>
+        </div>
+
+        <!-- Person Disciplines -->
+        <div class="col-lg-9 ">
+          <div>
+            <label for="select_personDiscipline" class="form-label">What is your discipline in the company?</label>
+            <input class="form-control" name= "datalist" list="datalistOptions" id="select_personDiscipline" placeholder="Type to search...">
+            <datalist id="datalistOptions">
+              {% for p in party %}
+              <option value={{p}}> 
+              {% endfor %}
+            </datalist></div> 
+        </div>
+        
+        <!-- Leading Position ? -->
+        <div class="col-lg-12">
+            <label for="leadingPosition" class="form-label"> Leading Position? &nbsp &nbsp</label> 
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingyes" value=true>
+                <label class="form-check-label" for="inlineRadio1">yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingnoo" value=false>
+                <label class="form-check-label" for="inlineRadio2">no</label>
+            </div> 
+                      
+        </div>
+        
+        <!-- experience -->
+        <label for="select_experience" class="form-label">How long work experience in the industry / in a similar position do you bring with you?</label> <br>
+        <div class="col-lg-4 my-0">
+            <select class="form-select" name="experience" id="select_experience" required>          
+              <option value="2-9"> 2 - 9 years</option>
+              <option value="9-19"> 9 - 19 years</option>
+              <option value="19+"> more than 19 years</option>
+            </select>             
+        </div>
+
+        <!-- heard of TD -->
+        <div class="col-lg-10 mt-4">
+            <label for="heardOfTD" class="form-label"> Herad of TD ? &nbsp &nbsp &nbsp</label> 
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="heardOfTD" id="heardOfTDyes" value=true>
+                <label class="form-check-label" for="heardOfTDyes">yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="heardOfTD" id="heardOfTDno" value=flase>
+                <label class="form-check-label" for="heardOfTDno">no</label>
+            </div>
+        </div>
+
+        <!-- TD Incident -->
+        <hr class="my-2">
+        
+        <h4 class="mb-3">TD Incident</h4>
+        <!-- TD Incident Name -->
+        <div class="col-lg-9 ">
+          <label for="incidentname" class="form-label">Description of the TD Incident</label>
+          <input type="text" class="form-control" id="incidentname" name="TDIncident_name" placeholder="" value="" required>
+          <div class="invalid-feedback">
+                Valid Description is required.
+          </div>
+        </div>
+
+        <!-- TD Cause -->
+        <hr class="my-2">
+        <div class="container ", id="cuase_container">
+        
+          <h4 class="mb-0">TD Cause</h4>
+          <div class="col-lg-9 ">
+          <div>
+            <label for="input_cause" class="form-label">What is the causes of the TD incident?</label>
+            <input class="form-control" list="Causes" id="input_cause" placeholder="", name="Cause_Name">
+            <datalist id="Causes">
+              {% for p in causes %}
+              <option >{{p}}</option> 
+              {% endfor %}
+            </datalist>
+          </div> 
+        </div>
+        <!-- TD Type -->
+        <div class="col-lg-9 ">
+          <div>
+            <label for="input_TDType" class="form-label">Which TD type does this cuase belong to?</label>
+            <input class="form-control" list="TYPE" id="input_TDType" placeholder="",name="TDtyp">
+            <datalist id="TYPE">
+              {% for p in types %}
+              <option >{{p}}</option> 
+              {% endfor %}
+            </datalist>
+          </div> 
+        </div>    
         <!-- Affected Disciplines -->
         <div class="col-lg-10 ">
-            <label for="personDiscipline" class="form-label">What is your discipline in the company?</label> <br>
+            <label for="personDiscipline" class="form-label">which disciplines are affected by this cause affect?</label> <br>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="personDisciplineMW" value="Mechanic">
                 <label class="form-check-label" for="personDisciplineMW">Mechanic</label>
@@ -216,6 +188,8 @@
                 
               </div>
             </div>
+        
+          </div>
 
           <button class="w-100 btn btn-primary btn-lg" type="submit">submit</button>
           
