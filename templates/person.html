@@ -1,6 +1,6 @@
 {%extends 'base.html'%}
 {% block form %}
-<form class="needs-validation" action="/incident" methods='POST' novalidate>
+<form class="needs-validation" action="/incident" method='post' novalidate>
     <!-- Person -->
     <div class="row g-3">
     <hr class="my-2">
@@ -27,7 +27,7 @@
     <div class="col-lg-9 ">
       <div>
         <label for="select_personDiscipline" class="form-label">What is your discipline in the company?</label>
-        <input class="form-control" name= "datalist" list="datalistOptions" id="select_personDiscipline" placeholder="Type to search...">
+        <input class="form-control" name= "discipline" list="datalistOptions" id="select_personDiscipline" placeholder="Type to search...">
         <datalist id="datalistOptions">
           {% for p in party %}
           <option> {{p}} </option>
@@ -37,13 +37,13 @@
     
     <!-- Leading Position ? -->
     <div class="col-lg-12">
-        <label for="leadingPosition" class="form-label"> Leading Position? &nbsp &nbsp</label> 
+        <label  class="form-label"> Leading Position? &nbsp &nbsp</label> 
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingyes" value=true>
+            <input class="form-check-input" type="radio" name="leadingPosition" id="leadingyes" value=true>
             <label class="form-check-label" for="inlineRadio1">yes</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="leadingnoo" value=false>
+            <input class="form-check-input" type="radio" name="leadingPosition" id="leadingnoo" value=false>
             <label class="form-check-label" for="inlineRadio2">no</label>
         </div> 
                   

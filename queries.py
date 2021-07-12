@@ -58,7 +58,6 @@ def getallTDType():
     TDTypes = [type["TDType"] for type in data_types]
 
     return TDTypes
-print(getallTDType())
 
 def getallTDSubtype():
     query = "MATCH (n:TDSubtype) RETURN n.name AS TDSubtyp"
